@@ -1,0 +1,16 @@
+.main-layout {
+    display: grid;
+    grid-template-columns: .25em 1fr .25em;
+}
+
+.main-layout>*:not(.full) {
+    grid-column: 2;
+}
+
+.main-layout>.full {
+    grid-column: 1 / -1;
+}
+
+/* .header {
+    grid-row: 1;
+} */

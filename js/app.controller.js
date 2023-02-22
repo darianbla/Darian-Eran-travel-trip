@@ -9,7 +9,7 @@ export const controller = {
 }
 
 
-
+window.onDelete = onDelete
 window.onload = onInit
 window.onAddMarker = onAddMarker
 window.onPanTo = onPanTo
@@ -23,6 +23,7 @@ function onInit() {
             console.log('Map is ready')
         })
         .catch(() => console.log('Error: cannot init map'))
+    loadLocations()
 }
 
 // This function provides a Promise API to the callback-based-api of getCurrentPosition
@@ -52,6 +53,7 @@ function onGetUserPos() {
             console.log('User position is:', pos.coords)
             document.querySelector('.user-pos').innerText =
                 `Latitude: ${pos.coords.latitude} - Longitude: ${pos.coords.longitude}`
+            onPanTo(pos.coords.latitude, pos.coords.longitude)
         })
         .catch(err => {
             console.log('err!!!', err)
@@ -73,8 +75,8 @@ function loadLocations() {
 function onAddLocation(lat, lng) {
     var locName = prompt('Name the location')
     let newLoc = locService.addLoc(lat, lng, locName)
-        locService.save(newLoc)
-        .then(loadLocations())
+    locService.save(newLoc).then(loadLocations)
+        
 }
 
 
@@ -82,9 +84,9 @@ function renderLocs(locs) {
     console.log(locs)
     var elLocations = document.querySelector('.locs')
     var strHTMLS = locs.map(loc => {
-        return `<div>${loc.locName}
-        <button onclick="onPanTo(${loc.lat}, ${loc.lng})">Go</button>
-        <button onclick="onDelete('${loc.id}')">Delete</button>
+        return `<div class="location-card flex space-between align-center"> <span>${loc.locName}</span>
+        <button class="btn btn-pan btn-round btn-arrow" onclick="onPanTo(${loc.lat}, ${loc.lng})">Go</button>
+        <button class="btn btn-delete btn-round" onclick="onDelete('${loc.id}')">Delete</button>
         </div>`
     })
     console.log(strHTMLS)
@@ -93,5 +95,6 @@ function renderLocs(locs) {
 
 function onDelete(locId) {
     locService.setDelete(locId)
-        .then(renderLocs(locs))
+        .then(loadLocations)
+    // renderLocs(locs)
 }

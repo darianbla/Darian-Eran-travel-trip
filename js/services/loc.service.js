@@ -7,6 +7,7 @@ export const locService = {
     save,
     addLoc,
     query,
+    setDelete,
 }
 
 const LOCS_KEY = 'locations'
@@ -44,14 +45,14 @@ function createLoc() {
 }
 
 function save(loc) {
-    if (loc.id) { return asyncStorageService.put(LOCS_KEY, loc) }
-    else { return asyncStorageService.post(LOCS_KEY, loc) }
+    if (loc.id) { return Promise.resolve(asyncStorageService.put(LOCS_KEY, loc)) }
+    else { return Promise.resolve(asyncStorageService.post(LOCS_KEY, loc)) }
 }
 
 function query() {
-    return new Promise(resolve => { resolve(asyncStorageService.query(LOCS_KEY)) })
+    return  Promise.resolve(asyncStorageService.query(LOCS_KEY)) 
 }
 
 function setDelete(locId) {
-    asyncStorageService.remove(LOCS_KEY, locId)
+    return Promise.resolve(asyncStorageService.remove(LOCS_KEY, locId))
 }

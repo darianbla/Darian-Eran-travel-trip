@@ -6,3 +6,6 @@
 @import 'basics/helpers.css';
 @import 'basics/layout.css';
 @import 'basics/buttons.css';
+
+/* COMPONENTS */
+@import 'components/header.css';

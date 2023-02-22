@@ -1,0 +1,7 @@
+.locs {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    background-color: var(--clrbase2);
+    color: var(--clr4);
+    grid-gap: 10px;
+}

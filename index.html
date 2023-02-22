@@ -15,23 +15,25 @@
 
             <form onsubmit="onSearch(event)">
                 <input type="search" name="search" placeholder="Search a place">
-                <button class="btn btn-round">GO</button>
+                <button class="btn btn-round btn-go btn-arrow">GO</button>
             </form>
-            <button class="btn btn-MyLocation">My location</button>
+            <button onclick="onGetUserPos()" class="btn btn-MyLocation">My location</button>
         </section>
     </header>
-
-    <div id="map" style="width: 100%; height: 400px;"></div>
-    <button onclick="onAddMarker()" class="btn btn-round btn-add-marker">Add Marker Speific Location</button>
-    <button onclick="onGetUserPos()" class="btn btn-round btn-user-pos">Get User Position</button>
-    <button onclick="onGetLocs()" class="btn btn-round btn-get-locs">Get Locations</button>
-    <button onclick="onPanTo()" class="btn btn-round btn-pan">Pan Map to Tokyo</button>
-    <p>You are at: <span class="user-pos"></span></p>
-    <pre class="locs">
+    <main class="main-container">
+        <div class="map" id="map" style="width: 100%; height: 400px;"></div>
+        <div class="main-nav">
+            <button onclick="onAddMarker()" class="btn btn-round btn-add-marker">Add Marker Speific Location</button>
+            <button onclick="onGetUserPos()" class="btn btn-round btn-user-pos">Get User Position</button>
+            <button onclick="onGetLocs()" class="btn btn-round btn-get-locs">Get Locations</button>
+            <button onclick="onPanTo()" class="btn btn-round btn-pan">Pan Map to Tokyo</button>
+        </div>
+        <p>You are at: <span class="user-pos"></span></p>
+        <pre class="locs">
     <p>Locations:
     </p>
 </pre>
-
+    </main>
 
     <script type="module" src="js/app.controller.js"></script>
 </body>

@@ -1,0 +1,14 @@
+.main-nav {
+    display: inline;
+    max-width: 120px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    grid-gap: 10px;
+}
+
+.main-nav button {
+    max-height: 130px;
+    width: 120px;
+    padding: 2px;
+}

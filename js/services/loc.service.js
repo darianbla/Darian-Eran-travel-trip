@@ -7,6 +7,7 @@ export const locService = {
     save,
     addLoc,
     query,
+    setDelete,
 }
 
 const LOCS_KEY = 'locations'

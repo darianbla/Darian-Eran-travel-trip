@@ -6,7 +6,6 @@
     border: 2px solid var(--clr3);
     font-size: 1.25em;
     font-family: monospace;
-    /* padding: 0.625em 1.625em; */
   
     position: relative;
   }
@@ -14,7 +13,7 @@
   .btn:hover {
     color: var(--clrbase1);
     border: 2px solid var(--clr3);
-    box-shadow: 0px 0px 0px inset var(--clr5);
+    box-shadow: 0px 0px 5px inset var(--clr-3);
   }
   
   
@@ -39,4 +38,9 @@
     content: " →";
     position: absolute;
     right: 1em;
+  }
+
+  .btn-go {
+    padding: 5px;
+    width: 2.2em;
   }

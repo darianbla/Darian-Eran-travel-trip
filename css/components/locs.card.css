@@ -5,3 +5,14 @@
     color: var(--clr4);
     grid-gap: 10px;
 }
+
+.location-card {
+    border: 1px solid var(--clr4);
+    background-color: var(--clr0);
+    border-radius:2em;
+    padding: .5em;
+}
+
+.location-card span {
+    padding: 5px;
+}

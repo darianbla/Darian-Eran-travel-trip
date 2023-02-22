@@ -11,6 +11,7 @@
 @import 'components/header.css';
 @import 'components/logo.css';
 @import 'components/locs.card.css';
+@import 'components/nav.card.css';
 
 /* MEDIA QUERYS */
 @import 'setup/mq.css';

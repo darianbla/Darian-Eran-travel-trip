@@ -1,7 +1,15 @@
+import { asyncStorageService } from "./async-storage.service.js";
+
+
 export const locService = {
-    getLocs
+    getLocs,
+    createLoc,
+    save,
+    addLoc,
+    query,
 }
 
+const LOCS_KEY = 'locations'
 
 const locs = [
     { name: 'Greatplace', lat: 32.047104, lng: 34.832384 }, 
@@ -16,4 +24,30 @@ function getLocs() {
     })
 }
 
+function addLoc(x, y, name){
+    var newLoc = createLoc()
+    newLoc.locName = name
+    newLoc.lat = x
+    newLoc.lng = y
+    newLoc.createdAt = Date.now()
+    return newLoc
+}
 
+function createLoc(){
+    return {
+        id: '',
+        locName: '',
+        lat: '',
+        lng: '',
+        createdAt: '',
+    }
+}
+
+function save(loc){
+    if (loc.id) {return asyncStorageService.put(LOCS_KEY, loc)}
+    else {return asyncStorageService.post(LOCS_KEY, loc)}
+}
+
+function query(){
+    return (asyncStorageService.query(LOCS_KEY))
+}

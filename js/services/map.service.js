@@ -1,3 +1,6 @@
+import { locService } from './loc.service.js'
+import {controller} from '../app.controller.js'
+
 export const mapService = {
     initMap,
     addMarker,
@@ -34,14 +37,20 @@ function initMap(lat = 32.0749831, lng = 34.9120554) {
                 infoWindow = new google.maps.InfoWindow({
                     position: mapsMouseEvent.latLng,
                 });
-                console.log(infoWindow)
+                console.log(infoWindow.position)
+                console.log(infoWindow.position.lat() +' '+ infoWindow.position.lng())
+                lat = infoWindow.position.lat()
+                lng = infoWindow.position.lng()
                 infoWindow.setContent(
                     JSON.stringify(mapsMouseEvent.latLng.toJSON(), null, 2)
                 );
                 infoWindow.open(gMap);
+                controller.onAddLocation(lat, lng)
             });
         })
 }
+
+
 
 function addMarker(loc) {
     var marker = new google.maps.Marker({

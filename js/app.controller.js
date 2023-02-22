@@ -2,7 +2,13 @@ import { locService } from './services/loc.service.js'
 import { mapService } from './services/map.service.js'
 // import { placesService } from './services/place.service.js'
 // import { storageService } from './services/storage.service.js'
-// import { asyncStorageService } from './services/async-storage.service.js'
+import { asyncStorageService } from './services/async-storage.service.js'
+
+export const controller = {
+    onAddLocation,
+}
+
+
 
 window.onload = onInit
 window.onAddMarker = onAddMarker
@@ -53,4 +59,30 @@ function onGetUserPos() {
 function onPanTo() {
     console.log('Panning the Map')
     mapService.panTo(35.6895, 139.6917)
+}
+
+function loadLocations() {
+    locService.query().then((locs) => {
+        console.log('locs', locs)
+        renderLocs(locs)
+    })
+
+}
+
+function onAddLocation(lat, lng){
+    var locName = prompt('Name the location')
+    let newLoc = locService.addLoc(lat,lng, locName)
+    locService.save(newLoc)
+        .then(loadLocations())
+}
+
+
+function renderLocs(locs){
+    console.log(locs)
+    var elLocations = document.querySelector('.locs')
+    var strHTMLS = locs.map(loc => {
+        return `<div>${loc.lat} ${loc.lng} </div>`
+    })
+    console.log(strHTMLS)
+    elLocations.innerHTML = strHTMLS.join('')
 }

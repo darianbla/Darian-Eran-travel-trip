@@ -1,4 +1,5 @@
 import { locService } from './loc.service.js'
+import {controller} from '../app.controller.js'
 
 export const mapService = {
     initMap,
@@ -43,15 +44,12 @@ function initMap(lat = 32.0749831, lng = 34.9120554) {
                     JSON.stringify(mapsMouseEvent.latLng.toJSON(), null, 2)
                 );
                 infoWindow.open(gMap);
-                onAddLocation(lat, lng)
+                controller.onAddLocation(lat, lng)
             });
         })
 }
 
-function onAddLocation(lat, lng){
-    let newLoc = locService.addLoc(lat,lng)
-    locService.save(newLoc)
-}
+
 
 function addMarker(loc) {
     var marker = new google.maps.Marker({

@@ -49,5 +49,5 @@ function save(loc){
 }
 
 function query(){
-    return new Promise (resolve => {resolve(asyncStorageService.query(LOCS_KEY))})
+    return new Promise (resolve => {resolve(asyncStorageService.query(LOCS_KEY, 0))})
 }

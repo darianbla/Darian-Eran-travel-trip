@@ -1,0 +1,34 @@
+:root {
+
+  /* palette */
+  /* --clr7: #848484;
+  --clr6: #1d1d1d;
+  --clr5: #516fad;
+  --clr4: #292929;
+  --clr3: #4f4e4e;
+  --clr2: #606060;
+  --clrbase: #ff7f00;
+  --1clr0: #dcdcdc;
+  --clr-1: #d0d0d0;
+  --clr-2: #ffffff;
+  --clr-3: #f8f8f8; */
+
+  /* TRYING ANOTHER PALLETTES*/
+  --clr7: #848484;
+  --clr6: #1d1d1d;
+  --clr5: #E8D8D2;
+  --clr4: #292929;
+  --clr3: #4f4e4e;
+  --clr2: #606060;
+  --clr1: #9dbeb7;
+  --clrbase2: #39A2AE;
+  --clrbase1: #71C4C2;
+  --clr0: #efe6d5;
+  --clr-1: #dcdcdc;
+  --clr-2: #d0d0d0;
+  --clr-3: #ffffff;
+  --clr-4: #f8f8f8;
+
+  /* layout */
+  --nav-height: 90px;
+}

@@ -12,7 +12,7 @@ export const locService = {
 const LOCS_KEY = 'locations'
 
 const locs = [
-    { name: 'Greatplace', lat: 32.047104, lng: 34.832384 }, 
+    { name: 'Greatplace', lat: 32.047104, lng: 34.832384 },
     { name: 'Neveragain', lat: 32.047201, lng: 34.832581 }
 ]
 
@@ -24,7 +24,7 @@ function getLocs() {
     })
 }
 
-function addLoc(x, y, name){
+function addLoc(x, y, name) {
     var newLoc = createLoc()
     newLoc.locName = name
     newLoc.lat = x
@@ -33,7 +33,7 @@ function addLoc(x, y, name){
     return newLoc
 }
 
-function createLoc(){
+function createLoc() {
     return {
         id: '',
         locName: '',
@@ -43,11 +43,15 @@ function createLoc(){
     }
 }
 
-function save(loc){
-    if (loc.id) {return asyncStorageService.put(LOCS_KEY, loc)}
-    else {return asyncStorageService.post(LOCS_KEY, loc)}
+function save(loc) {
+    if (loc.id) { return asyncStorageService.put(LOCS_KEY, loc) }
+    else { return asyncStorageService.post(LOCS_KEY, loc) }
 }
 
-function query(){
-    return new Promise (resolve => {resolve(asyncStorageService.query(LOCS_KEY))})
+function query() {
+    return new Promise(resolve => { resolve(asyncStorageService.query(LOCS_KEY)) })
+}
+
+function setDelete(locId) {
+    asyncStorageService.remove(LOCS_KEY, locId)
 }

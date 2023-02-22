@@ -69,23 +69,28 @@ function loadLocations() {
 
 }
 
-function onAddLocation(lat, lng){
+function onAddLocation(lat, lng) {
     var locName = prompt('Name the location')
-    let newLoc = locService.addLoc(lat,lng, locName)
-        locService.save(newLoc)
+    let newLoc = locService.addLoc(lat, lng, locName)
+    locService.save(newLoc)
         .then(loadLocations())
 }
 
 
-function renderLocs(locs){
+function renderLocs(locs) {
     console.log(locs)
     var elLocations = document.querySelector('.locs')
     var strHTMLS = locs.map(loc => {
         return `<div>${loc.locName}
         <button onclick="onPanTo(${loc.lat}, ${loc.lng})">Go</button>
-        <button onclick="onDelete(${loc.id})">Delete</button>
+        <button onclick="onDelete('${loc.id}')">Delete</button>
         </div>`
     })
     console.log(strHTMLS)
     elLocations.innerHTML = strHTMLS.join('')
+}
+
+function onDelete(locId) {
+    locService.setDelete(locId)
+        .then(renderLocs(locs))
 }

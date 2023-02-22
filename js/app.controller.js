@@ -1,7 +1,7 @@
 import { locService } from './services/loc.service.js'
 import { mapService } from './services/map.service.js'
-import { storageService } from './services/storage.service'
-import { asyncStorageService } from './services/async-storage.service'
+// import { storageService } from './services/storage.service'
+// import { asyncStorageService } from './services/async-storage.service'
 
 window.onload = onInit
 window.onAddMarker = onAddMarker

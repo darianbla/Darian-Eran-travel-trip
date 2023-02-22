@@ -9,15 +9,15 @@
 </head>
 
 <body class="main-layout">
-    <header class="header flex main-layout full">
-        <section class="nav flex align-center">
-            <h1>TravelTip Starter</h1>
+    <header class="main-header flex main-layout full">
+        <section class="nav flex space-between align-center">
+            <div class="logo" onclick="window.location.reload()">TravelTip</div>
 
             <form onsubmit="onSearch(event)">
                 <input type="search" name="search" placeholder="Search a place">
                 <button class="btn btn-round">GO</button>
             </form>
-            <button class="btn">My location</button>
+            <button class="btn btn-MyLocation">My location</button>
         </section>
     </header>
 

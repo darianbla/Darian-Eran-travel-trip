@@ -3,6 +3,7 @@
 }
 
 html {
+    background-color: var(--clrbase1);
     color: var(--clr4);
     font-family: monospace;
 }

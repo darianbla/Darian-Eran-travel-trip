@@ -1,6 +1,7 @@
 .main-layout {
     display: grid;
     grid-template-columns: .25em 1fr .25em;
+    grid-gap: 20px;
 }
 
 .main-layout>*:not(.full) {

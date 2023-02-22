@@ -1,5 +1,6 @@
 .main-header {
     position: relative;
-    background-color: var(--clrbase2);
+    height: 5.5em;
+    /* background-color: var(--clrbase2); */
     box-shadow: inset 0px -4px 1px var(--clrbase1), -2px 2px 3px inset var(--clrbase1);
 }

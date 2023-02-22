@@ -9,6 +9,8 @@
 
     .main-container {
         grid-template-columns: 1fr;
+        justify-content: center;
+        align-items: center;
     }
 
     .locs {
@@ -35,11 +37,17 @@
     }
 
     .main-nav {
-        max-width: 120px;
+        max-width: fit-content;
         display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        margin-left: .4em;
-        grid-gap: 1.8em;
+        justify-items: center;
+        justify-content: center;
+        align-items: center;
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .main-nav button {
+        height: 4em;
+        width: fit-content;
     }
 
     .map {
@@ -57,6 +65,8 @@
 
     .main-container {
         grid-template-columns: 1fr;
+        align-items: center;
+        justify-content: center;
     }
 
     .locs {
@@ -81,17 +91,18 @@
     }
 
     .main-nav {
-        max-width: 120px;
+        max-width: fit-content;
         display: grid;
+        justify-items: center;
+        justify-content: center;
+        align-items: center;
         grid-template-columns: repeat(3, 1fr);
-        margin-left: .4em;
         grid-gap: 1.8em;
     }
 
     .main-nav button {
-
-        max-height: 4.5em;
-        max-width: 6.8em;
+        height: 5em;
+        width: 7em;
     }
 
     .map {
@@ -113,10 +124,12 @@
     }
 
     .main-nav {
-        max-width: 120px;
+        max-width: fit-content;
         display: grid;
+        justify-items: center;
+        justify-content: center;
+        align-items: center;
         grid-template-columns: 1fr;
-        margin-left: 3rem;
         grid-gap: 10px;
     }
 
@@ -126,6 +139,11 @@
 
     .main-container {
         grid-template-columns: 2fr 1fr;
+    }
+
+    .main-nav button {
+        height: 5em;
+        width: 7em;
     }
 }
 
@@ -143,14 +161,23 @@
 
     .main-container {
         grid-template-columns: 2fr 1fr;
+        justify-content: center;
+        align-items: center;
     }
 
     .main-nav {
-        max-width: 120px;
+        max-width: fit-content;
         display: grid;
+        justify-items: center;
+        justify-content: center;
+        align-items: center;
         grid-template-columns: 1fr 1fr;
-        margin-left: 3rem;
-        grid-gap: 10px;
+        grid-gap: 20px;
+    }
+
+    .main-nav button {
+        height: 6em;
+        width: 8em;
     }
 
 
@@ -176,20 +203,27 @@
     }
 
     .main-nav {
-        max-width: 120px;
+        max-width: fit-content;
         display: grid;
+        justify-content: center;
+        justify-items: center;
+        align-items: center;
         grid-template-columns: 1fr 1fr;
 
-        grid-gap: 10px;
-        margin-left: 8rem;
+        grid-gap: 40px;
+    }
+
+    .main-nav button {
+        height: 6em;
+        width: 10em;
+        
     }
 
     .main-container {
         display: grid;
         grid-template-columns: 2fr 1fr;
         grid-gap: 20px;
-        background-color: var(--clr1);
-        /* justify-items: center; */
+        background-color: var(--clrbase3);
     }
 
     .locs {

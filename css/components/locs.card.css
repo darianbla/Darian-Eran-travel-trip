@@ -1,18 +1,21 @@
 .locs {
+    width: 100%;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
+    border: 2px solid var(--clrbase0);
     background-color: var(--clrbase2);
     color: var(--clr4);
     grid-gap: 10px;
 }
 
 .location-card {
-    border: 1px solid var(--clr4);
+    border: 1.5px solid var(--clrbase0);
     background-color: var(--clr0);
     border-radius:2em;
     padding: .5em;
 }
 
 .location-card span {
+    
     padding: 5px;
 }

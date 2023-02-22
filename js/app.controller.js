@@ -56,9 +56,9 @@ function onGetUserPos() {
             console.log('err!!!', err)
         })
 }
-function onPanTo() {
+function onPanTo(lat = 32, lng = 32) {
     console.log('Panning the Map')
-    mapService.panTo(35.6895, 139.6917)
+    mapService.panTo(lat, lng)
 }
 
 function loadLocations() {
@@ -72,7 +72,7 @@ function loadLocations() {
 function onAddLocation(lat, lng){
     var locName = prompt('Name the location')
     let newLoc = locService.addLoc(lat,lng, locName)
-    locService.save(newLoc)
+        locService.save(newLoc)
         .then(loadLocations())
 }
 
@@ -81,7 +81,10 @@ function renderLocs(locs){
     console.log(locs)
     var elLocations = document.querySelector('.locs')
     var strHTMLS = locs.map(loc => {
-        return `<div>${loc.lat} ${loc.lng} </div>`
+        return `<div>${loc.locName}
+        <button onclick="onPanTo(${loc.lat}, ${loc.lng})">Go</button>
+        <button onclick="onDelete(${loc.id})">Delete</button>
+        </div>`
     })
     console.log(strHTMLS)
     elLocations.innerHTML = strHTMLS.join('')
